@@ -7,5 +7,8 @@ This script adds a thief/robbery feature to your FiveM server. Players can initi
 - Hands-up animation for the victim
 - Use of Mythic Progbar for a progress bar during the robbery
 
+## Usage
+- Press `G` to initiate a robbery when near another player with their hands up.
+
 ## Dependencies
 [Mythic Progbar](https://github.com/HalCroves/mythic_progbar).
