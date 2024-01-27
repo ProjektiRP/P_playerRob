@@ -55,19 +55,25 @@ function RobPlayer()
             local closestPlayerHasHandsUp = IsEntityPlayingAnim(closestPlayerPed, "random@mugging3", "handsup_standing_base", 3)
 
             if closestPlayerHasHandsUp or IsPlayerDead(closestPlayer) then
-                exports['mythic_progbar']:Progress({ display = true, duration = 8500, label = "Searching..." })
-                PlayingAnim = true
-
-                -- Animation before opening the inventory, you can change animation if you want.
-                LoadAnimDict("mini@repair")
-                TaskPlayAnim(player, "mini@repair", "fixing_a_ped", 1.0, -1.0, -1, 49, 0, false, false, false)
-                Citizen.Wait(8500)
-
-                -- Stop animation when searching timer is 0
-                ClearPedTasks(player)
-                PlayingAnim = false
-
+                if lib.progressBar({
+                    duration = 8500,
+                    label = 'Searching...',
+                    useWhileDead = false,
+                    canCancel = true,
+                    disable = {
+                        move = true,
+                        car = true,
+                        combat = true
+                    },
+                    anim = {
+                        dict = 'mini@repair',
+                        clip = 'fixing_a_ped'
+                    },
+                    prop = {
+                    },
+                }) then
                 exports.ox_inventory:openInventory('player', GetPlayerServerId(closestPlayer))
+                end
             else
                 ESX.ShowNotification('Player dont have hands up!') -- Show notification if player don't have hands up, you can change text "Player dont have hands up!" if you want.
             end
