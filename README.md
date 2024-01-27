@@ -12,6 +12,6 @@ This player robbery script is made to be compatible with ox_inventory.
 - Press `G` to initiate a robbery when near another player with their hands up.
 
 ## Dependencies
-- [Mythic Progbar](https://github.com/MonsterTaerAttO/mythic_progbar) or [OX_Lib Progpar](https://overextended.dev/ox_lib/Modules/Interface/Client/progress)
+- [OX_Lib](https://github.com/overextended/ox_lib)
 - [OX_Inventory](https://github.com/overextended/ox_inventory)
 
