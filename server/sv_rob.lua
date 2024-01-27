@@ -1,7 +1,7 @@
 Citizen.CreateThread(function()
     while true do
-        if GetCurrentResourceName() ~= 'ox_playerRob' then
-            print('Change resource ' .. GetCurrentResourceName() .. ' name to ox_playerRob')
+        if GetCurrentResourceName() ~= 'P_playerRob' then
+            print('Change resource ' .. GetCurrentResourceName() .. ' name to P_playerRob')
         end
         Citizen.Wait(60000)
     end
